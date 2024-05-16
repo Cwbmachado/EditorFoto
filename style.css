@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    padding: 10px;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #2c2d2eff; /* Cor de fundo cinza claro para a página */
+}
+
+.container {
+    width: 850px;
+    padding: 30px 35px 35px;
+    background: #aeb1b4; /* Cor verde médio para o div container principal */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+    .container.desabilitado .painel-editor,
+    .container.desabilitado .controles .redefinir-filtro,
+    .container.desabilitado .controles .salvar-imagem {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .container h2 {
+        color: black;
+        margin-top: -8px;
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .container .envelope {
+        display: flex;
+        margin: 20px 0;
+        min-height: 335px;
+    }
+
+.envelope .painel-editor {
+    padding: 15px 20px;
+    width: 280px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.painel-editor .titulo {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.painel-editor .opcoes,
+.controles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.painel-editor button {
+    outline: none;
+    height: 40px;
+    font-size: 14px;
+    color: #6C757D;
+    background: #fff;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    border: 1px solid #aaa;
+}
+
+.painel-editor .filtro button {
+    width: calc(100% / 2 - 4px);
+}
+
+.painel-editor button:hover {
+    background: #f5f5f5;
+}
+
+.filtro button.ativo {
+    color: #fff;
+    border-color: #5372F0;
+    background: #5372F0;
+}
+
+.filtro .slider {
+    margin-top: 12px;
+}
+
+    .filtro .slider .info-filtro {
+        display: flex;
+        color: #464646;
+        font-size: 14px;
+        justify-content: space-between;
+    }
+
+    .filtro .slider input {
+        width: 100%;
+        height: 5px;
+        accent-color: #5372F0;
+    }
+
+.painel-editor .girar {
+    margin-top: 17px;
+}
+
+    .painel-editor .girar button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(100% / 4 - 3px);
+    }
+
+.girar .opcoes button:nth-child(3),
+.girar .opcoes button:nth-child(4) {
+    font-size: 18px;
+}
+
+.girar .opcoes button:active {
+    color: #fff;
+    background: #5372F0;
+    border-color: #5372F0;
+}
+
+.envelope .imagem-preview {
+    flex-grow: 1;
+    display: flex;
+    overflow: hidden;
+    margin-left: 20px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagem-preview img {
+    max-width: 490px;
+    max-height: 335px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.controles button {
+    padding: 11px 20px;
+    font-size: 14px;
+    border-radius: 3px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+}
+
+.controles .redefinir-filtro {
+    color: darkgreen;
+    border: 1px solid #6C757D;
+}
+
+    .controles .redefinir-filtro:hover {
+        color: #fff;
+        background: #6C757D;
+    }
+
+.controles .escolher-imagem {
+    background: #6C757D;
+    border: 1px solid #6C757D;
+}
+
+.controles .salvar-imagem {
+    margin-left: 5px;
+    background: #8e44ad; /* Cor roxo claro para os botões */
+    border: 1px solid #8e44ad; /* Cor roxo claro para os botões */
+}
+
+@media screen and (max-width: 760px) {
+    .container {
+        padding: 25px;
+    }
+
+        .container .envelope {
+            flex-wrap: wrap-reverse;
+        }
+
+    .envelope .painel-editor {
+        width: 100%;
+    }
+
+    .envelope .imagem-preview {
+        width: 100%;
+        margin: 0 0 15px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .controles button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .controles .linha {
+        width: 100%;
+    }
+
+        .controles .linha .salvar-imagem {
+            margin-left: 0px;
+        }
+}
